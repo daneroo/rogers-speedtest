@@ -1,8 +1,15 @@
 # Service Availability - Speedtest
 
+## TODO
+
+- Could put in CRON */5
+- Vis (nivo + netlify/vercel)
+- Other tests,
+  -  hey/loadimpact
+  - nats heartbeat (plus nats-test)
+
 ## Speedtest
 
-- Could put n cron//
 
 ```bash
 speedtest-cli --json | jq
