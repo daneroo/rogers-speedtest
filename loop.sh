@@ -9,5 +9,5 @@ while true; do
     FILE="./data/speedtest/${HH}-${STAMP}.json"
     (speedtest-cli --json 2>/dev/null || echo "{ \"timestamp\": \"${STAMP}\", \"error\":true }") > ${FILE}
     cat ${FILE} | jq -r "[.timestamp,.download,.upload,.error]| @csv"
-    sleep 30
+    sleep 260
 done
