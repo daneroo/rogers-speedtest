@@ -27,6 +27,12 @@ cat data/speedtest/*.json|jq -r "[.timestamp,.download,.upload,.error]| @csv"
 
 ## Setup
 
+### On Ubuntu
+
+```bash
+sudo apt-get install speedtest-cli jq
+```
+
 ### On MacOs
 
 ```bash
