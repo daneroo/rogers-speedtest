@@ -5,7 +5,9 @@
 - Could put in CRON */5
 - Vis (nivo + netlify/vercel)
 - Other tests,
-  -  hey/loadimpact
+  - iperf over tailscale
+  - netdata
+  - hey/loadimpact
   - nats heartbeat (plus nats-test)
 
 ## Speedtest
@@ -15,6 +17,12 @@
 speedtest-cli --json | jq
 
 ./loop.sh
+```
+
+Ouput
+
+```bash
+cat data/speedtest/*.json|jq -r "[.timestamp,.download,.upload,.error]| @csv"
 ```
 
 ## Setup
