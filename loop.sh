@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-HH=$(hostname)
+HH=$(hostname -f)
 
 mkdir -p ./data/speedtest/
 while true; do 
