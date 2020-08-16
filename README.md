@@ -17,6 +17,13 @@ See <https://pypi.org/project/pingparsing/#cli-usage>
 ```bash
 pingparsing -c 5 google.com
 ```
+
+alternative: `-n` no DNS, `-D` timestamp linus only `-4` ipv4 linux only `-c` count
+
+```bash
+ping -n -D -4 -c 1000 speedtestslnt.rogers.com
+```
+
 ## Speedtest
 
 
@@ -29,9 +36,9 @@ speedtest-cli --json | jq
 Analyze
 
 ```bash
-cat `find data/speedtest/ -name \*.json` | jq -r "[.timestamp,.download,.upload,.error]| @csv"
+cat `find data/*/speedtest/ -name \*.json` | jq -r "[.timestamp,.download,.upload,.error]| @csv"
 
-cat `find data/ping/ -name \*.json` | jq '.["google.com"].packet_loss_rate'
+cat `find data/*/ping/ -name \*.json` | jq '.["google.com"].packet_loss_rate'
 ```
 
 ## Setup
