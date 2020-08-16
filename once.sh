@@ -8,4 +8,4 @@ echo Testing ping for ${FQDN} at ${STAMP}
 pingparsing -c 5 google.com
 
 echo Testing speed for ${FQDN} at ${STAMP}
-speedtest-cli --json
+speedtest-cli --json | jq
