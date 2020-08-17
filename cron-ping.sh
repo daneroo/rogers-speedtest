@@ -23,7 +23,7 @@ FILE="./data/${FQDN}/ping/${DAY}/${FQDN}-${STAMP}.json"
 mkdir -p $(dirname $FILE)
 
 
-echo "Testing ping (c,w:${DURATION},ts:${TIMESTAMP}) for ${FQDN} ($UNAME) at ${STAMP}"
+echo "${STAMP} Testing ping (c,w:${DURATION},ts:${TIMESTAMP}) for ${FQDN} ($UNAME)"
 /usr/local/bin/pingparsing \
   --indent 0 \
   --timestamp ${TIMESTAMP} \

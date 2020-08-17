@@ -9,7 +9,7 @@ STAMP=$(date -u +"%Y-%m-%dT%H.%M.%SZ")
 FILE="./data/${FQDN}/speedtest/${DAY}/${FQDN}-${STAMP}.json"
 mkdir -p $(dirname $FILE)
 
-echo "Testing speed for ${FQDN} at ${STAMP}"
+echo "${STAMP} Testing speed for ${FQDN}"
 (speedtest-cli --json 2>/dev/null || echo "{ \"timestamp\": \"${STAMP}\", \"error\":true }") > ${FILE}
 
 retVal=$?
