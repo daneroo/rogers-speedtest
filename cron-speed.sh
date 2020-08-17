@@ -12,3 +12,8 @@ mkdir -p $(dirname $FILE)
 echo "Testing speed for ${FQDN} at ${STAMP}"
 (speedtest-cli --json 2>/dev/null || echo "{ \"timestamp\": \"${STAMP}\", \"error\":true }") > ${FILE}
 
+retVal=$?
+if [ $retVal -ne 0 ]; then
+    echo "Error: ${retVal}"
+fi
+
