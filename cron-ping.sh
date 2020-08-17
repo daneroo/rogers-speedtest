@@ -11,7 +11,7 @@ esac
 
 # for MacOS cron : garbage elsewhere
 if [ "${UNAME}" = "Darwin" ]; then
-    echo "I am on MacOS (uname:${UNAME}): ts:${TIMESTAMP}"
+    # echo "I am on MacOS (uname:${UNAME}): ts:${TIMESTAMP}"
     export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 fi
 
