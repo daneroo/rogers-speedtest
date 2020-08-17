@@ -2,13 +2,18 @@
 
 ## TODO
 
-- Could put in CRON */5
 - Vis (nivo + netlify/vercel)
 - Other tests,
   - iperf over tailscale
   - netdata
   - hey/loadimpact
   - nats heartbeat (plus nats-test)
+
+## Battery (on aspire/bell.ts.imetrical.com)
+
+```bash
+upower -i /org/freedesktop/UPower/devices/battery_BAT0
+```
 
 ## Cron
 
