@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PINGHOSTS="google.com speedtestslnt.rogers.com "
+PINGHOSTS="google.com speedtestslnt.rogers.com"
 DURATION=300
 UNAME="$(uname)"
 case "${UNAME}" in

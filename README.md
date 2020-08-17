@@ -42,6 +42,8 @@ Analyze
 cat `find data/*/speedtest/ -name \*.json` | jq -r "[.timestamp,.download,.upload,.error]| @csv"
 
 cat `find data/*/ping/ -name \*.json` | jq '.["google.com"].packet_loss_rate'
+cat `find data/*/ping/ -name \*.json` | jq '.["speedtestslnt.rogers.com"].packet_loss_rate'
+
 ```
 
 ## Setup
