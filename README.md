@@ -10,19 +10,23 @@
   - hey/loadimpact
   - nats heartbeat (plus nats-test)
 
+## Cron
+
+```txt
+# ping for 300s every 300s
+*/5 * * * * cd ${HOME}/Code/iMetrical/rogers-speedtest; ./cron-ping.sh >> error-ping.log 2>&1
+# run speedtest every 5 minutes
+*/5 * * * * cd ${HOME}/Code/iMetrical/rogers-speedtest; ./cron-speed.sh >> error-speed.log 2>&1
+```
+
 ## Ping
 
 See <https://pypi.org/project/pingparsing/#cli-usage>
 
 ```bash
-pingparsing -c 5 google.com
+pingparsing --indent 0 -c 5 -w 5 google.com speedtestslnt.rogers.com
 ```
 
-alternative: `-n` no DNS, `-D` timestamp linus only `-4` ipv4 linux only `-c` count
-
-```bash
-ping -n -D -4 -c 1000 speedtestslnt.rogers.com
-```
 
 ## Speedtest
 
@@ -30,7 +34,6 @@ ping -n -D -4 -c 1000 speedtestslnt.rogers.com
 ```bash
 speedtest-cli --json | jq
 
-./loop.sh
 ```
 
 Analyze

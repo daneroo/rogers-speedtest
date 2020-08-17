@@ -5,7 +5,7 @@ DAY=$(date -u +"%Y-%m-%d")
 STAMP=$(date -u +"%Y-%m-%dT%H.%M.%SZ")
 
 echo Testing ping for ${FQDN} at ${STAMP}
-pingparsing -c 5 google.com
+pingparsing --indent 0 -c 5 -w 5 google.com speedtestslnt.rogers.com
 
 echo Testing speed for ${FQDN} at ${STAMP}
 speedtest-cli --json | jq
