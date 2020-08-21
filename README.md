@@ -1,15 +1,8 @@
 # Service Availability - Speedtest
 
-## TODO
+Goo Sheets: <https://docs.google.com/spreadsheets/d/1ZneQVmyKgvQLajOVIrnnWDM9Z5EYV0cGxdlZqQ2vSAk/edit?usp=sharing>
 
-- Vis (nivo + netlify/vercel)
-- Other tests,
-  - iperf over tailscale
-  - netdata
-  - hey/loadimpact
-  - nats heartbeat (plus nats-test)
-
-## Sync back data to Dirac:
+## Sync back data to Dirac
 
 ```bash
 rsync  -avz --progress piaget.ts.imetrical.com:Code/iMetrical/rogers-speedtest/data/ ./data/
