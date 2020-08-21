@@ -46,13 +46,15 @@ Out:
 node parsePing.js | ./node_modules/.bin/json2csv > `hostname`.ping.csv
 ```
 
-
 ## Speedtest
 
 
 ```bash
 speedtest-cli --json | jq
+docker run  moutten/speedtest-cli
 
+# Nice download only loop
+while true; do echo $(date) - $(hostname) - $(speedtest --server 18556 --no-upload --json |jq '.download / 1e4 | floor|. / 100') Mb/s; sleep 60; done
 ```
 
 Out:
