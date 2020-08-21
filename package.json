@@ -1,0 +1,25 @@
+{
+  "name": "rogers-speedtest",
+  "version": "1.0.0",
+  "description": "## TODO",
+  "main": "parse.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daneroo/rogers-speedtest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daneroo/rogers-speedtest/issues"
+  },
+  "homepage": "https://github.com/daneroo/rogers-speedtest#readme",
+  "dependencies": {
+    "glob": "^7.1.6",
+    "json2csv": "^5.0.1",
+    "moment": "^2.27.0"
+  }
+}

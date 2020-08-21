@@ -32,6 +32,11 @@ See <https://pypi.org/project/pingparsing/#cli-usage>
 pingparsing --indent 0 -c 5 -w 5 google.com speedtestslnt.rogers.com
 ```
 
+Out:
+```bash
+node parsePing.js | ./node_modules/.bin/json2csv > `hostname`.ping.csv
+```
+
 
 ## Speedtest
 
@@ -41,7 +46,12 @@ speedtest-cli --json | jq
 
 ```
 
-Analyze
+Out:
+```bash
+node parseSpeed.js | ./node_modules/.bin/json2csv > `hostname`.speed.csv
+```
+
+## Incremental Analyze (Deprecated)
 
 ```bash
 cat `find data/*/speedtest/ -name \*.json` | jq -r "[.timestamp,.download,.upload,.error]| @csv"
