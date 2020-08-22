@@ -6,7 +6,7 @@
   "scripts": {
     "start": "gatsby develop -p 8001",
     "build": "gatsby build",
-    "deploy:now": "now --prod && now rm --safe --yes rogers-speedtest",
+    "deploy:vercel": "vercel --prod && vercel rm --safe --yes rogers-speedtest",
     "testWithAuditLater": "npm run lint && npm audit && npm run unit",
     "test": "npm run lint && npm run unit",
     "lint": "standard",
