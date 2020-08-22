@@ -13,6 +13,12 @@ Notes: The host running on Rogers (bell.ts.imetrical.com was a seriously underpo
 
 The Videotron test was run on a Mac Mini (mid 2011)
 
+## TODO
+
+- Restarted test at 2020-08-21T21.50.01Z
+  - Compare Wired, WIFI Downstairs, WIFI beside router.
+  - But only for bell.ts/Rogers.
+
 ## Sync back data to Dirac
 
 ```bash
