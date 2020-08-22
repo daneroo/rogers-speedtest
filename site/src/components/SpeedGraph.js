@@ -12,11 +12,12 @@ const provider = {
 
 export default function SpeedGraph ({
   host = 'bell.ts.imetrical.com',
-  metric = 'download'
-  // day = '2020-08-17'
+  metric = 'download',
+  start = '2020-08-17',
+  end = '2020-08-21'
 }) {
   const { theme: { colors: { primary, secondary, text } } } = useThemeUI()
-  const data = speeds.filter(o => o.host === host && o.error !== true)
+  const data = speeds.filter(o => o.host === host && o.day >= start && o.day <= end && o.error !== true)
   const width = 320
   const height = 320
 

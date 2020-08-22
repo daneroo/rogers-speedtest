@@ -11,10 +11,12 @@ const provider = {
 }
 export default function PingGraph ({
   host = 'bell.ts.imetrical.com',
-  destination = 'speedtestslnt.rogers.com'
+  destination = 'speedtestslnt.rogers.com',
+  start = '2020-08-17',
+  end = '2020-08-21'
 }) {
   const { theme: { colors: { primary, secondary, text } } } = useThemeUI()
-  const data = pings.filter(o => o.host === host && o.destination === destination)
+  const data = pings.filter(o => o.host === host && o.destination === destination && o.day >= start && o.day <= end)
   const width = 320
   const height = 320
   // For <pre>
