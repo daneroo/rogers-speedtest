@@ -1,0 +1,92 @@
+# Google-WIFI vs Bell Giga router
+
+We decide to simplify our network setup and remove the Google WIFI router. We will use the Bell Giga router instead.
+
+There was general flakiness in the double NAT setup. We wer experiencing performance degradation on the inside network, mostly on downloads.
+
+We are now using (homebrew/apt installed) `speedtest` from Ookla instead of the `speedtest-cli` python package
+---
+
+Google-WIFI is behind Bell Giga router; double NAT
+
+Should we test both wired and wifi?
+
+## Setup
+
+- on dirac and galois, using [Ookla's version](https://www.speedtest.net/apps/cli)
+- I cannot test with acer aspire because it maxes out a 100Mb/s.
+
+```bash
+
+```bash 
+brew install teamookla/speedtest/speedtest
+
+while true; do echo '-------- start' $(date +"%Y-%m-%dT%H:%M:%S%Z"); speedtest --progress no|grep 'Download:\|Upload:'; echo '-------- done'; sleep 1800; done
+
+```
+
+## Usage
+
+```txt
+daniel@galois:~$ speedtest --help
+Speedtest by Ookla is the official command line client for testing the speed and performance of your internet connection.
+
+Version: speedtest 1.2.0.84
+
+Usage: speedtest [<options>]
+  -h, --help                        Print usage information
+  -V, --version                     Print version number
+  -L, --servers                     List nearest servers
+  -s, --server-id=#                 Specify a server from the server list using its id
+  -I, --interface=ARG               Attempt to bind to the specified interface when connecting to servers
+  -i, --ip=ARG                      Attempt to bind to the specified IP address when connecting to servers
+  -o, --host=ARG                    Specify a server, from the server list, using its host's fully qualified domain name
+  -p, --progress=yes|no             Enable or disable progress bar (Note: only available for 'human-readable'
+                                    or 'json' and defaults to yes when interactive)
+  -P, --precision=#                 Number of decimals to use (0-8, default=2)
+  -f, --format=ARG                  Output format (see below for valid formats)
+      --progress-update-interval=#  Progress update interval (100-1000 milliseconds)
+  -u, --unit[=ARG]                  Output unit for displaying speeds (Note: this is only applicable
+                                    for ‘human-readable’ output format and the default unit is Mbps)
+  -a                                Shortcut for [-u auto-decimal-bits]
+  -A                                Shortcut for [-u auto-decimal-bytes]
+  -b                                Shortcut for [-u auto-binary-bits]
+  -B                                Shortcut for [-u auto-binary-bytes]
+      --selection-details           Show server selection details
+      --ca-certificate=ARG          CA Certificate bundle path
+  -v                                Logging verbosity. Specify multiple times for higher verbosity
+      --output-header               Show output header for CSV and TSV formats
+
+ Valid output formats: human-readable (default), csv, tsv, json, jsonl, json-pretty
+
+ Machine readable formats (csv, tsv, json, jsonl, json-pretty) use bytes as the unit of measure with max precision
+
+ Valid units for [-u] flag: 
+   Decimal prefix, bits per second:  bps, kbps, Mbps, Gbps
+   Decimal prefix, bytes per second: B/s, kB/s, MB/s, GB/s
+   Binary prefix, bits per second:   kibps, Mibps, Gibps
+   Binary prefix, bytes per second:  kiB/s, MiB/s, GiB/s
+   Auto-scaled prefix: auto-binary-bits, auto-binary-bytes, auto-decimal-bits, auto-decimal-bytes
+```
+
+---
+
+## Pristine dirac before
+
+```bash
+pip uninstall -y pingparsing humanreadable mbstrdecoder packaging pyparsing python-dateutil pytz subprocrunner typepy chardet
+```
+
+Initially:
+
+```bash
+daniel@dirac:~/.../iMetrical/rogers-speedtest (master *=)$ pip list
+Package    Version
+---------- -------
+docutils   0.19
+meson      1.0.0
+pip        22.3.1
+setuptools 65.6.3
+six        1.16.0
+wheel      0.38.4
+```

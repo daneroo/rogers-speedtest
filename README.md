@@ -1,5 +1,10 @@
 # Service Availability - Speedtest
 
+See [Google WIFI Migration experiments](./README-Google-WIFI),
+and also my notes in Obsidian *Bell Giga Router Configuration*.
+
+Note: *Use node 16 to rebuild `./site`*
+
 I ran some connectivity tests on Rogers (and Videtron for comparison) over a few days.
 
 I ran:
@@ -24,6 +29,8 @@ The Videotron test was run on a Mac Mini (mid 2011)
 ```bash
 rsync  -avz --progress piaget.ts.imetrical.com:Code/iMetrical/rogers-speedtest/data/ ./data/
 rsync  -avz --progress bell.ts.imetrical.com:Code/iMetrical/rogers-speedtest/data/ ./data/
+```
+
 ## Battery (on aspire/bell.ts.imetrical.com)
 
 ```bash
@@ -48,12 +55,12 @@ pingparsing --indent 0 -c 5 -w 5 google.com speedtestslnt.rogers.com
 ```
 
 Out:
+
 ```bash
 node parsePing.js | ./node_modules/.bin/json2csv > `hostname`.ping.csv
 ```
 
 ## Speedtest
-
 
 ```bash
 speedtest-cli --json | jq
@@ -64,6 +71,7 @@ while true; do echo $(date) - $(hostname) - $(speedtest --server 18556 --no-uplo
 ```
 
 Out:
+
 ```bash
 node parseSpeed.js | ./node_modules/.bin/json2csv > `hostname`.speed.csv
 ```
